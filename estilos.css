@@ -270,4 +270,5 @@ nav ul li a:hover {
 
 .pelicula:hover h3 {
     opacity: 1;
+    margin-top: 40px ;
 }
