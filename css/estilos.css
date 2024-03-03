@@ -34,7 +34,17 @@ header {
     background-color: #131212;
     color: white;
 }
-
+.checkbtn{
+    font-size:30px;
+    color: orange;
+    float: right;
+    line-height: 80px;
+    cursor:pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
 .icono img {
     margin-left: 10px;
     width: 60px;
@@ -44,11 +54,13 @@ header {
 .ubicacion select {
     padding: 5px;
     font-size: 16px;
+    background-color: #ff8902;
 }
 
 .fecha {
     display: flex;
     align-items: center;
+    color:rgb(255, 136, 0);
 }
 
 .fecha label {
@@ -56,18 +68,26 @@ header {
 }
 
 .opciones ul {
+    margin-top: 20px;
     list-style-type: none;
     padding: 0;
+    color: orange;
 }
 
 .opciones ul li {
     display: inline;
     margin-right: 10px;
+    
 }
 
 .opciones ul li a {
     color: white;
     text-decoration: none;
+    
+}
+li a.active, li a:hover {
+background-color: orange;
+cursor: pointer;
 }
 
 .ingresar button {
@@ -107,6 +127,7 @@ hr{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 40px;
+    cursor: pointer;
 }
 
 /*Slider*/
@@ -170,6 +191,58 @@ hr{
 }
 .pie-pagina .grupo-2 small{
     font-size: 15px;
+}
+@media (max-width: 952px){
+    .icono img{
+        padding-left: 20px;
+        transition: .5s;
+    }
+    .opciones ul li a{
+        font-size: 16px;
+    }
+    .fecha{
+        padding-left: 14px;
+    }
+    .ubicacion{
+        padding-left: 16px;
+    }
+    .ingresar{
+       padding-left: 16px;
+    }
+}
+
+@media(max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        background: orange;
+        top: 80px;
+        left: -100%;
+        text-align:center;
+        transition: all .5s;
+
+    }
+    .opciones ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+
+    }
+    .opciones ul li a{
+        font-size: 20px;
+
+    }
+    li a.active, li a:hover{
+        background: none;
+        color: orange;
+    }
+    #check:checked ~ .menu .opciones ul{
+        left:0;
+    }
 }
 
 /*Responsive*/
